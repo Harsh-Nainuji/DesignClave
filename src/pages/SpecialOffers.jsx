@@ -1,0 +1,172 @@
+import React from 'react';
+
+const SpecialOffers = () => {
+  const handleClaim = () => {
+    const target = document.getElementById('contact');
+    if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
+
+  const featuredOffer = {
+    icon: '🎁',
+    eyebrow: 'Limited Time',
+    title: '₹15,000+ Projects — 15% OFF + Free Promo Post',
+    description: 'Spend ₹15,000 or more and unlock premium value on day one:',
+    bullets: [
+      '15% OFF your total bill',
+      'Free custom promotional post to launch your site',
+    ],
+    cta: 'Claim This Offer',
+  };
+
+  const offers = [
+    {
+      icon: '✨',
+      title: 'Surprise Bonus on First Milestone',
+      description: 'Hit the first payment milestone and receive a surprise add-on:',
+      bullets: [
+        'Bonus animation',
+        'Extra layout variation',
+        'Premium design touch (mini-brand asset, favicon, etc.)',
+      ],
+      accent: 'Bonus',
+      cta: 'Unlock Bonus',
+    },
+    {
+      icon: '🏁',
+      title: 'Priority Booking for Future Projects',
+      description: 'Join our VIP list after your first project and get:',
+      bullets: [
+        'Priority access for future bookings',
+        'Possible early-bird discounts on new services',
+        'custom promotional post for you',
+      ],
+      accent: 'VIP',
+      cta: 'Join VIP List',
+    },
+    {
+      icon: '👥',
+      title: 'Refer & Save — 10% OFF Your Next Project',
+      description:
+        'Refer someone who hires us and get 10% OFF on your next project. No cap — refer more, save more.',
+      bullets: [
+        '10% OFF on your next project',
+        'Applies after your referral hires us'
+      ],
+      accent: '10% OFF',
+      cta: 'Refer & Save',
+    },
+    {
+      icon: '⚡',
+      title: 'Free Speed Optimization (Up to 30% Faster)',
+      description:
+        'We fine-tune your site to load faster, reduce bounce, and boost engagement.',
+      bullets: [],
+      accent: 'Free',
+      cta: 'Get Faster Load',
+    },
+  ];
+
+  return (
+    <>
+      <section id="special-offers" className="relative max-w-6xl px-4 mx-auto mt-16 sm:mt-24 lg:mt-32 sm:px-8 lg:px-12">
+      <div className="absolute h-32 pointer-events-none sm:h-40 -inset-x-4 sm:-inset-x-10 -top-8 sm:-top-10 blur-3xl opacity-20 bg-gradient-to-r from-lime-400/40 via-lime-300/30 to-lime-400/40" />
+
+      <div className="relative mb-8 sm:mb-10">
+        <h2 className="mb-3 text-2xl font-bold sm:text-3xl md:text-4xl">Special Offers</h2>
+        <p className="max-w-2xl text-sm text-gray-300 sm:text-base">
+          High-value perks to launch with momentum. Some offers can be combined — ask us how.
+        </p>
+      </div>
+
+      <div className="relative overflow-hidden border rounded-2xl sm:rounded-3xl border-lime-400/25 bg-gradient-to-br from-white/10 via-white/5 to-transparent">
+        <div className="absolute inset-0 opacity-20 bg-[radial-gradient(600px_200px_at_20%_-10%,rgba(132,204,22,0.35),transparent)]" />
+        <div className="relative flex flex-col gap-4 p-6 sm:gap-6 sm:p-8 md:p-10 lg:p-12 lg:flex-row lg:items-center">
+          <div className="flex-1 min-w-0">
+            <div className="flex items-center gap-3">
+              <span className="px-2 py-1 text-[10px] font-bold tracking-wider uppercase rounded-full text-black bg-lime-400/90">{featuredOffer.eyebrow}</span>
+            </div>
+            <div className="flex items-center gap-3 mt-3 sm:mt-4">
+              <div className="flex items-center justify-center w-10 h-10 text-lg rounded-full sm:w-12 sm:h-12 sm:text-xl bg-lime-400/10 text-lime-300">
+                {featuredOffer.icon}
+              </div>
+              <h3 className="text-xl font-bold leading-snug text-white sm:text-2xl md:text-3xl">{featuredOffer.title}</h3>
+            </div>
+            <p className="mt-3 text-xs leading-relaxed text-gray-300 sm:mt-4 sm:text-sm">{featuredOffer.description}</p>
+            <ul className="mt-2 space-y-1 text-xs text-gray-200 sm:mt-3 sm:space-y-2 sm:text-sm">
+              {featuredOffer.bullets.map((point, i) => (
+                <li key={i} className="flex items-start gap-2">
+                  <span className="mt-1 inline-block h-1 w-1 sm:h-1.5 sm:w-1.5 rounded-full bg-lime-400/80" />
+                  <span>{point}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="flex-shrink-0">
+            <button
+              onClick={handleClaim}
+              className="inline-flex items-center gap-2 px-4 py-2 sm:px-5 sm:py-3 text-sm sm:text-base font-semibold text-black transition-all duration-300 rounded-full bg-lime-400 hover:bg-lime-300 hover:shadow-lg hover:translate-y-[-1px]"
+            >
+              {featuredOffer.cta}
+              <svg width="14" height="14" className="sm:w-4 sm:h-4" viewBox="0 0 24 24" fill="none">
+                <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div className="grid grid-cols-12 gap-4 mt-6 sm:gap-6">
+        {offers.map((offer, index) => (
+          <div key={index} className="col-span-12 md:col-span-6 lg:col-span-4">
+            <div className="relative h-full overflow-hidden transition-all duration-300 border rounded-xl sm:rounded-2xl group border-white/10 bg-white/5 hover:border-lime-400/40 hover:shadow-[0_0_0_1px_rgba(132,204,22,0.25)]">
+              <div className="absolute inset-0 transition-opacity duration-300 opacity-0 pointer-events-none group-hover:opacity-100 bg-gradient-to-tr from-lime-400/10 via-transparent to-transparent" />
+              <div className="relative p-4 sm:p-6">
+                <div className="flex items-start justify-between">
+                  <div className="flex items-center gap-2 sm:gap-3">
+                    <div className="flex items-center justify-center w-8 h-8 text-base rounded-full sm:w-10 sm:h-10 sm:text-lg bg-lime-400/10 text-lime-300">
+                      {offer.icon}
+                    </div>
+                    <h3 className="text-base font-semibold leading-snug text-white sm:text-lg">
+                      {offer.title}
+                    </h3>
+                  </div>
+                  <span className="px-2 py-1 text-xs font-bold tracking-wide text-black rounded-full bg-lime-400/90">
+                    {offer.accent}
+                  </span>
+                </div>
+
+                <p className="mt-3 text-xs leading-relaxed text-gray-300 sm:mt-4 sm:text-sm">{offer.description}</p>
+
+                {offer.bullets.length > 0 && (
+                  <ul className="mt-2 space-y-1 text-xs text-gray-200 sm:mt-3 sm:space-y-2 sm:text-sm">
+                    {offer.bullets.map((point, i) => (
+                      <li key={i} className="flex items-start gap-2">
+                        <span className="mt-1 inline-block h-1 w-1 sm:h-1.5 sm:w-1.5 rounded-full bg-lime-400/80" />
+                        <span>{point}</span>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+
+                
+              </div>
+
+              <div className="h-1 transition-all duration-300 bg-gradient-to-r from-lime-400/60 via-lime-300/60 to-lime-400/60 opacity-60 group-hover:opacity-100" />
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div className="flex flex-wrap items-center gap-2 mt-6 text-xs text-gray-400 sm:gap-3 sm:mt-8">
+        <span className="px-2 py-1 border rounded-full border-white/10 bg-white/5">T&C apply</span>
+        <span>Offers subject to change. Valid on new engagements unless noted.</span>
+              </div>
+      </section>
+    </>
+  );
+};
+
+export default SpecialOffers;
+
+

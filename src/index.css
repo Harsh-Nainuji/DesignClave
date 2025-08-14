@@ -1,0 +1,363 @@
+/* Import Montserrat font */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px; /* Account for fixed navbar - mobile first */
+}
+
+@media (min-width: 640px) {
+  html {
+    scroll-padding-top: 100px; /* sm breakpoint */
+  }
+}
+
+@media (min-width: 1024px) {
+  html {
+    scroll-padding-top: 120px; /* lg breakpoint */
+  }
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background: #000;
+  color: #fff;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+@media (min-width: 640px) {
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #84cc16;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #65a30d;
+}
+
+/* Firefox scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #84cc16 #1a1a1a;
+}
+
+/* Smooth transitions for all elements */
+* {
+  transition: all 0.3s ease;
+}
+
+/* Focus styles for accessibility */
+button:focus,
+input:focus,
+textarea:focus {
+  outline: 2px solid #84cc16;
+  outline-offset: 2px;
+}
+
+/* Custom animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes countUp {
+  from {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes popUp {
+  from {
+    opacity: 0;
+    transform: scale(0.8) translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* Animation classes */
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.3s ease-out;
+}
+
+.animate-count-up {
+  animation: countUp 0.5s ease-out;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.3s ease-out;
+}
+
+.animate-popUp {
+  animation: popUp 0.3s ease-out;
+}
+
+/* Gradient text utility */
+.gradient-text {
+  background: linear-gradient(135deg, #84cc16, #65a30d);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Glass morphism effect */
+.glass {
+  background: rgba(255, 255, 255, 0.1);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Hover effects */
+.hover-lift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(132, 204, 22, 0.2);
+}
+
+/* Section spacing - mobile first */
+section {
+  padding: 40px 0;
+}
+
+@media (min-width: 640px) {
+  section {
+    padding: 60px 0;
+  }
+}
+
+@media (min-width: 1024px) {
+  section {
+    padding: 80px 0;
+  }
+}
+
+/* Responsive text */
+@media (max-width: 767px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+/* Remove default button styles */
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+/* Form elements */
+input, textarea {
+  font-family: inherit;
+}
+
+/* Selection color */
+::selection {
+  background: #84cc16;
+  color: #000;
+}
+
+::-moz-selection {
+  background: #84cc16;
+  color: #000;
+}
+
+/* Smooth section transitions */
+section {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Enhanced focus states for better accessibility */
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid #84cc16;
+  outline-offset: 2px;
+  box-shadow: 0 0 0 4px rgba(132, 204, 22, 0.1);
+}
+
+/* Navbar button specific styles - ensure no unwanted effects */
+.navbar-button {
+  position: relative;
+  background: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  transform: none !important;
+}
+
+.navbar-button::after {
+  display: none !important;
+}
+
+.navbar-button:hover {
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+.navbar-button:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* Ensure navbar buttons only have color transition */
+.navbar-button {
+  transition: color 0.3s ease !important;
+}
+
+/* Stat card styles - removed hover effects */
+.stat-card {
+  position: relative;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+}
+
+@media (min-width: 640px) {
+  .stat-card {
+    padding: 1rem;
+  }
+}
+
+/* Counter animation enhancement - removed hover effects */
+.stat-card .text-white {
+  transition: all 0.3s ease;
+}
+
+/* Why Us grid item isolation */
+.grid > div {
+  align-self: start;
+  height: fit-content;
+}
+
+/* Mobile-specific improvements */
+@media (max-width: 767px) {
+  /* Reduce animation complexity on mobile */
+  .animate-fade-in-up,
+  .animate-fade-in,
+  .animate-count-up,
+  .animate-float,
+  .animate-popUp {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+  
+  /* Ensure text is readable on small screens */
+  h1, h2, h3, h4, h5, h6 {
+    word-wrap: break-word;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+  }
+  
+  /* Improve touch targets */
+  button, a {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  /* Better spacing for mobile */
+  .space-y-4 > * + * {
+    margin-top: 1rem;
+  }
+  
+  .space-y-6 > * + * {
+    margin-top: 1.5rem;
+  }
+  
+  .space-y-8 > * + * {
+    margin-top: 2rem;
+  }
+}
+
+/* Tablet improvements */
+@media (min-width: 768px) and (max-width: 1023px) {
+  /* Optimize for tablet landscape */
+  .grid {
+    gap: 1.5rem;
+  }
+  
+  /* Better text sizing for tablets */
+  h1 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+  }
+  
+  h2 {
+    font-size: clamp(1.8rem, 4vw, 3rem);
+  }
+}
