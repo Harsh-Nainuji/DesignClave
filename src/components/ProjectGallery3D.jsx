@@ -69,7 +69,7 @@ function ProjectModal({ project, isOpen, onClose }) {
         {/* Project Image */}
         <div className="mb-6 overflow-hidden rounded-xl aspect-video group">
           <img 
-            src={`/src/assets/${project.id}.jpeg`}
+            src={`/${project.id}.jpeg`}
             alt={project.title}
             className="object-cover w-full h-full transition-transform duration-500 ease-out rounded-xl hover:scale-105"
           />
@@ -132,9 +132,10 @@ function ProjectCard({ project, onClick, index }) {
       {/* Project Image */}
       <div className="relative h-48 overflow-hidden">
         <img 
-          src={`/src/assets/${project.id}.jpeg`}
+          src={`/${project.id}.jpeg`}
           alt={project.title}
-          className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+          className="w-full h-full object-cover rounded-lg"
+          loading="lazy"
         />
         
         {/* Hover Overlay */}

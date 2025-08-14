@@ -19,69 +19,61 @@ const ChromaGrid = ({
   // Your actual project data with your own photos
   const demo = [
     {
-      image: "/src/assets/1.jpeg",
-      title: "Modern Web App Design",
-      subtitle: "Contemporary UI/UX",
-      handle: "A cutting-edge web application featuring sleek, minimalist design with modern card-based layouts. This project showcases contemporary design principles with subtle shadows, smooth transitions, and intuitive user interfaces perfect for enterprise solutions and modern web platforms.",
-      borderColor: "#84cc16",
-      gradient: "linear-gradient(145deg,#84cc16,#000)",
+      id: 1,
+      title: "Modern Web Design",
+      category: "Web Design",
+      image: "/1.jpeg",
+      description: "Clean and modern web design with focus on user experience."
     },
     {
-      image: "/src/assets/2.jpeg",
-      title: "Professional Dashboard",
-      subtitle: "Business Intelligence",
-      handle: "A sophisticated business dashboard featuring advanced data visualization and comprehensive user management capabilities. This project demonstrates professional web application design with clean interfaces, organized information architecture, and strategic data presentation methods for business analytics.",
-      borderColor: "#84cc16",
-      gradient: "linear-gradient(210deg,#84cc16,#000)",
+      id: 2,
+      title: "E-commerce Platform",
+      category: "E-commerce",
+      image: "/2.jpeg",
+      description: "Full-featured e-commerce platform with modern UI/UX."
     },
     {
-      image: "/src/assets/3.jpeg",
-      title: "Jewelry Shop Site",
-      subtitle: "Luxury E-commerce",
-      handle: "An elegant jewelry e-commerce platform featuring premium product showcases with sophisticated imagery and refined product grids. This design combines luxury aesthetics with intuitive navigation, creating an engaging shopping experience that reflects the premium nature of fine jewelry.",
-      borderColor: "#84cc16",
-      gradient: "linear-gradient(165deg,#84cc16,#000)",
+      id: 3,
+      title: "Mobile App Design",
+      category: "Mobile",
+      image: "/3.jpeg",
+      description: "Intuitive mobile app design for better user engagement."
     },
     {
-      image: "/src/assets/4.jpeg",
-      title: "E-commerce Clothing Store",
-      subtitle: "Fashion Retail",
-      handle: "A modern fashion e-commerce solution featuring trendy product displays with high-quality imagery and seamless shopping experiences. This platform combines contemporary design with user-friendly navigation, creating an engaging retail environment that drives fashion sales and customer satisfaction.",
-      borderColor: "#84cc16",
-      gradient: "linear-gradient(195deg,#84cc16,#000)",
+      id: 4,
+      title: "Brand Identity",
+      category: "Branding",
+      image: "/4.jpeg",
+      description: "Complete brand identity design and visual guidelines."
     },
     {
-      image: "/src/assets/5.jpeg",
-      title: "Minimal Landing Page",
-      subtitle: "Conversion Focused",
-      handle: "A clean, minimal landing page designed to maximize user engagement and drive business results. This design focuses on conversion optimization through compelling visuals, clear call-to-actions, and strategic content placement that guides users toward desired outcomes with elegant simplicity.",
-      borderColor: "#84cc16",
-      gradient: "linear-gradient(225deg,#84cc16,#000)",
+      id: 5,
+      title: "Dashboard Design",
+      category: "Dashboard",
+      image: "/5.jpeg",
+      description: "User-friendly dashboard with data visualization."
     },
     {
-      image: "/src/assets/6.jpeg",
-      title: "Real Estate Site",
-      subtitle: "Property Showcase",
-      handle: "A comprehensive real estate website featuring property listings with stunning photography and detailed property information. This design showcases real estate portfolios with professional imagery, intuitive search functionality, and engaging content that helps potential buyers find their perfect property.",
-      borderColor: "#84cc16",
-      gradient: "linear-gradient(135deg,#84cc16,#000)",
+      id: 6,
+      title: "Landing Page",
+      category: "Landing Page",
+      image: "/6.jpeg",
+      description: "High-converting landing page design."
     },
     {
-      image: "/src/assets/7.jpeg",
-      title: "Hotel Management",
-      subtitle: "Hospitality Solutions",
-      handle: "A sophisticated hotel management system featuring booking interfaces, room management, and guest services. This project demonstrates advanced hospitality web application design with clean interfaces, efficient booking systems, and professional service presentation for modern hotels and resorts.",
-      borderColor: "#84cc16",
-      gradient: "linear-gradient(180deg,#84cc16,#000)",
+      id: 7,
+      title: "Portfolio Website",
+      category: "Portfolio",
+      image: "/7.jpeg",
+      description: "Creative portfolio website showcasing work."
     },
     {
-      image: "/src/assets/8.jpeg",
-      title: "Fashion Website",
-      subtitle: "Style & Trends",
-      handle: "A dynamic fashion website that captures contemporary style through bold visual statements and innovative layouts. This design showcases fashion trends with striking imagery, unique typography choices, and engaging interactive elements that reflect the latest in style and design.",
-      borderColor: "#84cc16",
-      gradient: "linear-gradient(150deg,#84cc16,#000)",
-    },
+      id: 8,
+      title: "Corporate Website",
+      category: "Corporate",
+      image: "/8.jpeg",
+      description: "Professional corporate website design."
+    }
   ];
 
   const data = items?.length ? items : demo;
