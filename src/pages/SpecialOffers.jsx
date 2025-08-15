@@ -9,7 +9,7 @@ const SpecialOffers = () => {
   const featuredOffer = {
     icon: '🎁',
     eyebrow: 'Limited Time',
-    title: '₹15,000+ Projects — 15% OFF + Free Promo Post',
+    title: '₹15,000+ Projects - 15% OFF + Free Promo Post',
     description: 'Spend ₹15,000 or more and unlock premium value on day one:',
     bullets: [
       '15% OFF your total bill',
@@ -74,7 +74,7 @@ const SpecialOffers = () => {
       <div className="relative mb-8 sm:mb-10">
         <h2 className="mb-3 text-2xl font-bold sm:text-3xl md:text-4xl">Special Offers</h2>
         <p className="max-w-2xl text-sm text-gray-300 sm:text-base">
-          High-value perks to launch with momentum. Some offers can be combined — ask us how.
+          High value perks to launch with momentum. Some offers can be combined — ask us how.
         </p>
       </div>
 
@@ -131,7 +131,7 @@ const SpecialOffers = () => {
                       {offer.title}
                     </h3>
                   </div>
-                  <span className="px-2 py-1 text-xs font-bold tracking-wide text-black rounded-full bg-lime-400/90">
+                  <span className="px-2 py-1 text-xs font-bold tracking-wide text-black rounded-full bg-lime-400/90 flex items-center justify-center min-w-[60px] text-center">
                     {offer.accent}
                   </span>
                 </div>
@@ -158,11 +158,14 @@ const SpecialOffers = () => {
         ))}
       </div>
 
-      <div className="flex flex-wrap items-center gap-2 mt-6 text-xs text-gray-400 sm:gap-3 sm:mt-8">
-        <span className="px-2 py-1 border rounded-full border-white/10 bg-white/5">T&C apply</span>
-        <span>Offers subject to change. Valid on new engagements unless noted.</span>
-              </div>
-      </section>
+      {/* Terms & Conditions Section */}
+      <div className="p-3 mt-6 border rounded-lg sm:mt-8 sm:p-4 border-white/10 bg-white/5">
+        <h3 className="mb-2 text-sm font-medium text-white sm:text-base">Terms & Conditions</h3>
+        <div className="text-xs leading-relaxed text-gray-400">
+          <p>All special offers are for first-time clients only, subject to availability, and may change or end without notice. Discounts apply only to projects meeting stated conditions and cannot be combined unless specified. Free promo items are limited in scope and provided at our discretion. Post-launch support covers minor fixes only for 7 days after final delivery. We reserve the right to decide offer eligibility and what each offer includes. By working with us, you agree to these terms.</p>
+        </div>
+      </div>
+    </section>
     </>
   );
 };

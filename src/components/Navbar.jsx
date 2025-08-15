@@ -82,7 +82,7 @@ const Navbar = () => {
 
             {/* Mobile Menu Button */}
             <button 
-              className="p-2 text-gray-300 lg:hidden"
+              className="p-2 text-gray-300 lg:hidden focus:outline-none focus:ring-0"
               onClick={toggleMobileMenu}
               aria-label="Toggle mobile menu"
             >
@@ -137,10 +137,10 @@ const Navbar = () => {
       {isScrolled && (
         <button
           onClick={scrollToTop}
-          className="fixed z-40 p-2 text-black transition-colors duration-300 rounded-full shadow-lg sm:p-3 bottom-4 right-4 sm:bottom-8 sm:right-8 scroll-top-button bg-lime-400 hover:bg-lime-300"
+          className="fixed z-40 p-2 text-black transition-colors duration-300 rounded-full shadow-lg sm:p-3 bottom-4 right-4 sm:bottom-8 sm:right-8 scroll-top-button bg-lime-400 hover:bg-lime-300 flex items-center justify-center"
           aria-label="Scroll to top"
         >
-          <svg width="16" height="16" className="sm:w-5 sm:h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+          <svg width="14" height="14" className="sm:w-5 sm:h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
             <path d="M18 15l-6-6-6 6"/>
           </svg>
         </button>

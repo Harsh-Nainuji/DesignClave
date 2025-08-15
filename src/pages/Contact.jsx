@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const Contact = () => {
+  const [showToast, setShowToast] = useState(false);
+  
   const socialItems = [
     {
       icon: (
@@ -24,6 +26,15 @@ const Contact = () => {
 
   return (
     <>
+      <style>
+        {`
+          /* Clean, minimal animations for the new vertical card */
+          .email-card-hover {
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+          }
+        `}
+      </style>
+      
       <section id="contact" className="max-w-6xl mx-auto mt-16 sm:mt-24 lg:mt-32 px-4 sm:px-8 lg:px-12 mb-16 sm:mb-24 lg:mb-32">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 items-center">
         {/* Contact content on the left */}
@@ -52,25 +63,85 @@ const Contact = () => {
           </div>
         </div>
 
-        {/* Glass card on the right */}
+        {/* Beautiful Vertical Email Card on the right */}
         <div className="flex justify-center lg:justify-end">
-          <div className="group relative w-64 sm:w-80 h-40 sm:h-48">
-            <div className="relative w-full h-full transition-all duration-500 ease-out transform group-hover:rotate-y-12">
-              <div className="absolute inset-0 bg-white/5 backdrop-blur-lg border border-white/10 rounded-2xl shadow-xl">
-                <div className="flex flex-col items-center justify-center h-full p-6 sm:p-8 text-center">
-                  <h3 className="text-xl sm:text-2xl font-bold text-white mb-3 sm:mb-4 font-['Poppins'] drop-shadow-lg">
-                    Contact me at
+          <div className="group relative w-72 sm:w-80 h-48 sm:h-56">
+            {/* Main Card Container */}
+            <div className="relative w-full h-full transition-all duration-500 ease-out transform group-hover:scale-105 group-hover:-translate-y-2">
+              {/* Background Glow */}
+              <div className="absolute inset-0 bg-gradient-to-br from-lime-400/20 via-lime-300/10 to-transparent rounded-2xl blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+              
+              {/* Main Card */}
+              <div className="relative w-full h-full bg-gradient-to-br from-white/10 via-white/5 to-black/20 backdrop-blur-xl border border-white/20 rounded-2xl shadow-2xl overflow-hidden">
+                {/* Animated Border */}
+                <div className="absolute inset-0 rounded-2xl p-[1px] bg-gradient-to-r from-lime-400/30 via-lime-300/30 to-lime-400/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                  <div className="w-full h-full bg-black rounded-2xl" />
+                </div>
+                
+                {/* Content Container */}
+                <div className="relative z-10 flex flex-col items-center justify-center h-full p-6 sm:p-8 text-center">
+                  {/* Email Icon */}
+                  <div className="mb-4 relative">
+                    <div className="w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-br from-lime-400/20 to-lime-300/20 rounded-full flex items-center justify-center border border-lime-400/30 group-hover:border-lime-400/50 transition-all duration-500">
+                      <svg className="w-6 h-6 sm:w-7 sm:h-7 text-lime-400 group-hover:text-lime-300 transition-colors duration-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                      </svg>
+                    </div>
+                    {/* Subtle glow effect */}
+                    <div className="absolute inset-0 w-12 h-12 sm:w-14 sm:h-14 bg-lime-400/10 rounded-full blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+                  </div>
+                  
+                  {/* Title */}
+                  <h3 className="text-lg sm:text-xl font-bold text-white mb-3 font-['Poppins'] group-hover:text-lime-100 transition-colors duration-500">
+                    Get in Touch
                   </h3>
-                  <p className="text-lime-400 text-lg sm:text-xl font-bold font-['Poppins'] drop-shadow-lg">
-                    dsgnclave@gmail.com
+                  
+                  {/* Email Address */}
+                  <div className="relative group/email">
+                    <p className="text-lime-400 text-base sm:text-lg font-semibold font-['Poppins'] group-hover/email:text-lime-300 transition-colors duration-500 cursor-pointer select-all">
+                      dsgnclave@gmail.com
+                    </p>
+                    {/* Elegant underline */}
+                    <div className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-gradient-to-r from-lime-400 to-lime-300 group-hover/email:w-full group-hover/email:left-0 transition-all duration-500 ease-out" />
+                  </div>
+                  
+                  {/* Copy hint */}
+                  <p className="text-xs text-gray-400 mt-3 opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-y-2 group-hover:translate-y-0">
+                    Click to copy email address
                   </p>
                 </div>
+                
+                {/* Subtle overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-lime-400/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
               </div>
             </div>
+            
+            {/* Click to copy functionality */}
+            <div 
+              className="absolute inset-0 z-20 cursor-pointer"
+              onClick={() => {
+                navigator.clipboard.writeText('dsgnclave@gmail.com');
+                setShowToast(true);
+                setTimeout(() => setShowToast(false), 2000);
+              }}
+              title="Click to copy email"
+            />
           </div>
         </div>
-              </div>
-      </section>
+      </div>
+      
+      {/* Toast Notification */}
+      {showToast && (
+        <div className="fixed bottom-4 right-4 z-50 px-4 py-2 bg-lime-400 text-black rounded-lg shadow-lg transform transition-all duration-300 ease-out animate-bounce">
+          <div className="flex items-center gap-2">
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+            </svg>
+            <span className="font-semibold">Email copied!</span>
+          </div>
+        </div>
+      )}
+    </section>
     </>
   );
 };
