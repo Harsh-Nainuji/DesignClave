@@ -64,22 +64,22 @@ const Home = () => {
         <div className="absolute bottom-0 left-0 right-0 z-10 h-32 bg-gradient-to-t from-black via-black/80 to-transparent"></div>
         
         {/* Content - Mobile centered, desktop with original layout */}
-        <div className="relative z-10 w-full max-w-6xl px-4 sm:px-8 lg:px-12 flex flex-col items-center sm:items-start content-container">
-          <h1 className="mb-4 text-3xl font-light leading-tight tracking-wide text-center sm:text-left sm:mb-6 sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl w-full">
+        <div className="relative z-10 flex flex-col items-center w-full max-w-6xl px-4 sm:px-8 lg:px-12 sm:items-start content-container">
+          <h1 className="w-full mb-4 text-3xl font-light leading-tight tracking-wide text-center sm:text-left sm:mb-6 sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl">
             <span className="block text-center sm:text-left sm:ml-10 md:ml-18 lg:ml-22 xl:ml-24 text-[1.15em]">THE WEB</span>
             <span className="block text-center text-[1.15em]">PRODUCTION</span>
             <span className="block text-center sm:text-right sm:mr-16 md:mr-24 lg:mr-32 xl:mr-40 text-[1.15em] sm:ml-[20%] md:ml-[28%] lg:ml-[36%] xl:ml-[44%]">AGENCY</span>
           </h1>
           
           {/* Subtext and Button - Mobile centered */}
-          <div className="flex flex-col items-center gap-3 mb-6 sm:gap-2 sm:mb-4 sm:items-end w-full">
+          <div className="flex flex-col items-center w-full gap-3 mb-6 sm:gap-2 sm:mb-4 sm:items-end">
             <p className="max-w-lg px-4 text-sm font-light leading-relaxed text-center text-gray-300 sm:text-left sm:text-base sm:px-0">
               Crafting high-converting web designs that don't just look good they perform. Trusted by startups, business owners, and creative teams worldwide.
             </p>
           </div>
           
           {/* Centered Button - Mobile optimized */}
-          <div className="flex justify-center w-full mb-6 sm:mb-4 sm:justify-start sm:ml-[6.5%]">
+          <div className="flex justify-center w-full mb-6 sm:mb-4">
             <button 
               onClick={() => {
                 const projectsSection = document.getElementById('projects');
@@ -87,7 +87,7 @@ const Home = () => {
                   projectsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }
               }}
-              className="flex items-center gap-2 px-6 py-3 text-sm font-bold text-black transition-all duration-300 transform rounded-full sm:px-3 sm:py-2 bg-lime-400 hover:bg-lime-300 hover:scale-105 hover:shadow-lg sm:text-base"
+              className="flex items-center gap-2 px-6 py-3 text-sm font-bold text-black transition-all duration-300 transform rounded-full sm:px-3 sm:py-2 bg-lime-400 hover:bg-lime-300 hover:scale-105 hover:shadow-lg sm:text-base ml-[12%]"
             >
               Explore
               <svg 
@@ -95,7 +95,7 @@ const Home = () => {
                 height="16" 
                 viewBox="0 0 24 24" 
                 fill="none" 
-                className="transition-transform duration-300 transform rotate-90 group-hover:translate-x-1 group-hover:-translate-y-1 sm:w-3.5 sm:h-3.5 font-bold mt-0.5"
+                className="transition-transform duration-300 transform rotate-90 group-hover:-translate-x-1 group-hover:translate-y-1 sm:w-3.5 sm:h-3.5 font-bold mt-0.5"
               >
                 <path 
                   d="M7 17L17 7M17 7H7M17 7V17" 
