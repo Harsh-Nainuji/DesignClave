@@ -27,17 +27,17 @@ const ChromaGrid = ({
     },
     {
       id: 2,
-      title: "E-commerce Platform",
-      category: "E-commerce",
+      title: "Morden Dashboard",
+      category: "Dashboard",
       image: "/2.jpeg",
-      description: "Full-featured e-commerce platform with modern UI/UX."
+      description: "Modern dashboard with modern UI/UX."
     },
     {
       id: 3,
-      title: "Mobile App Design",
-      category: "Mobile",
+      title: "Jewelry Store Design",
+      category: "E-commerce",
       image: "/3.jpeg",
-      description: "Intuitive mobile app design for better user engagement."
+      description: "Morden jewelry store design"
     },
     {
       id: 4,
@@ -48,31 +48,31 @@ const ChromaGrid = ({
     },
     {
       id: 5,
-      title: "Dashboard Design",
-      category: "Dashboard",
+      title: "Homepage Design",
+      category: "Homepage",
       image: "/5.jpeg",
-      description: "User-friendly dashboard with data visualization."
+      description: "User-friendly Homepage with Minimalist visualization."
     },
     {
       id: 6,
-      title: "Landing Page",
-      category: "Landing Page",
+      title: "Real Estate Site",
+      category: "E-commerce",
       image: "/6.jpeg",
-      description: "High-converting landing page design."
+      description: "High-converting Real Estate Site design."
     },
     {
       id: 7,
-      title: "Portfolio Website",
-      category: "Portfolio",
+      title: "Interior Design Website",
+      category: "E-commerce",
       image: "/7.jpeg",
-      description: "Creative portfolio website showcasing work."
+      description: "Creative Interior Design Website showcasing work."
     },
     {
       id: 8,
-      title: "Corporate Website",
+      title: "Clothing Store",
       category: "Corporate",
       image: "/8.jpeg",
-      description: "Professional corporate website design."
+      description: "Professional Clothing Store website design."
     }
   ];
 
@@ -161,47 +161,62 @@ const ChromaGrid = ({
           key={i}
           onMouseMove={handleCardMove}
           onClick={(event) => handleCardClick(c, event)}
-          className="group relative flex flex-col w-full rounded-xl overflow-hidden bg-gray-900 transition-all duration-500 cursor-pointer hover:scale-[1.02] hover:shadow-2xl border border-transparent hover:border-lime-400/30 hover:shadow-lime-400/20"
+          className="group relative flex flex-col w-full rounded-xl overflow-hidden bg-gray-900 transition-all duration-700 cursor-pointer hover:scale-[1.03] hover:shadow-2xl border border-transparent hover:border-lime-400/50 hover:shadow-lime-400/30 hover:bg-gray-800/50 chroma-card"
           style={
             {
-              "--spotlight-color": "rgba(132, 204, 22, 0.15)",
+              "--spotlight-color": "rgba(132, 204, 22, 0.25)",
             }
           }
         >
+          {/* Enhanced glow effect on hover */}
+          <div className="absolute inset-0 transition-opacity duration-700 opacity-0 group-hover:opacity-100 rounded-xl bg-gradient-to-r from-lime-400/10 via-transparent to-lime-400/10 blur-xl group-hover:blur-2xl" />
+          
+          {/* Enhanced spotlight effect */}
           <div
-            className="absolute inset-0 pointer-events-none transition-opacity duration-500 z-20 opacity-0 group-hover:opacity-100"
+            className="absolute inset-0 z-20 transition-opacity duration-700 opacity-0 pointer-events-none group-hover:opacity-100"
             style={{
               background:
-                "radial-gradient(circle at var(--mouse-x) var(--mouse-y), var(--spotlight-color), transparent 70%)",
+                "radial-gradient(circle at var(--mouse-x) var(--mouse-y), var(--spotlight-color), transparent 80%)",
             }}
           />
           <div className="relative z-10 flex-1 p-3 sm:p-4">
-            <div className="aspect-[16/10] w-full overflow-hidden rounded-lg">
+            <div className="aspect-[16/10] w-full overflow-hidden rounded-lg relative group-hover:shadow-2xl group-hover:shadow-lime-400/20 transition-all duration-700">
               <img
                 src={c.image}
                 alt={c.title}
                 loading="lazy"
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                className="object-cover w-full h-full transition-all duration-700 group-hover:scale-110 group-hover:rotate-1"
                 onError={(e) => {
                   // Fallback to placeholder if image fails to load
                   e.target.src = `https://picsum.photos/seed/${i + 1}/500/312`;
                 }}
               />
-              {/* Hover overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              {/* Enhanced hover overlay with gradient */}
+              <div className="absolute inset-0 transition-all duration-700 opacity-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent group-hover:opacity-100" />
+              
+              {/* Floating category badge */}
+              <div className="absolute transition-all duration-700 transform translate-y-2 opacity-0 top-3 left-3 group-hover:opacity-100 group-hover:translate-y-0">
+                <span className="px-2 py-1 text-xs font-medium text-white border rounded-full bg-lime-500/90 backdrop-blur-sm border-lime-400/30 category-badge">
+                  {c.category}
+                </span>
+              </div>
             </div>
           </div>
-          <footer className="relative z-10 p-3 sm:p-4 text-white">
-            <h3 className="text-base sm:text-lg font-semibold mb-1 group-hover:text-lime-300 transition-colors duration-300">{c.title}</h3>
-            <p className="text-xs sm:text-sm text-lime-400 font-medium group-hover:text-lime-300 transition-colors duration-300">{c.subtitle}</p>
-            <p className="text-xs text-gray-400 mt-2 overflow-hidden text-ellipsis opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-y-2 group-hover:translate-y-0">
-              {c.handle}
-            </p>
+          <footer className="relative z-10 p-3 text-white sm:p-4">
+            <h3 className="mb-1 text-base font-semibold transition-colors duration-300 sm:text-lg group-hover:text-lime-300">{c.title}</h3>
+            <p className="text-xs font-medium transition-colors duration-300 sm:text-sm text-lime-400 group-hover:text-lime-300">{c.category}</p>
+            
+            {/* Enhanced hover effect for description */}
+            <div className="mt-2 overflow-hidden">
+              <p className="text-xs text-gray-400 transition-all duration-500 transform translate-y-4 opacity-0 group-hover:opacity-100 group-hover:translate-y-0">
+                {c.description}
+              </p>
+            </div>
           </footer>
         </article>
       ))}
       <div
-        className="absolute inset-0 pointer-events-none z-30"
+        className="absolute inset-0 z-30 pointer-events-none"
         style={{
           backdropFilter: "grayscale(1) brightness(0.8)",
           WebkitBackdropFilter: "grayscale(1) brightness(0.8)",
