@@ -331,34 +331,6 @@ textarea:focus-visible {
   box-shadow: 0 0 0 4px rgba(132, 204, 22, 0.1);
 }
 
-/* Navbar button specific styles - ensure no unwanted effects */
-.navbar-button {
-  position: relative;
-  background: none !important;
-  border: none !important;
-  box-shadow: none !important;
-  transform: none !important;
-}
-
-.navbar-button::after {
-  display: none !important;
-}
-
-.navbar-button:hover {
-  transform: none !important;
-  box-shadow: none !important;
-}
-
-.navbar-button:focus {
-  outline: none !important;
-  box-shadow: none !important;
-}
-
-/* Ensure navbar buttons only have color transition */
-.navbar-button {
-  transition: color 0.3s ease !important;
-}
-
 /* Stat card styles - removed hover effects */
 .stat-card {
   position: relative;

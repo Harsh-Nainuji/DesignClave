@@ -92,6 +92,10 @@ header div button.contact-cta-button:hover {
   position: relative;
 }
 
+.navbar-nav button:hover {
+  color: #a3e635 !important; /* lime-400 */
+}
+
 .navbar-nav button::before,
 .navbar-nav button::after {
   display: none !important;
