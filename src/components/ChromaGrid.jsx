@@ -161,15 +161,15 @@ const ChromaGrid = ({
           key={i}
           onMouseMove={handleCardMove}
           onClick={(event) => handleCardClick(c, event)}
-          className="group relative flex flex-col w-full rounded-xl overflow-hidden bg-gray-900 transition-all duration-700 cursor-pointer hover:scale-[1.03] hover:shadow-2xl border border-transparent hover:border-lime-400/10 hover:shadow-lime-400/5 hover:bg-gray-800/30 chroma-card"
+          className="group relative flex flex-col w-full rounded-xl overflow-hidden bg-gray-900 transition-all duration-700 cursor-pointer hover:scale-[1.03] hover:shadow-2xl border border-transparent hover:border-white/20 hover:shadow-white/10 hover:bg-gray-800/30 chroma-card"
           style={
             {
-              "--spotlight-color": "rgba(132, 204, 22, 0.075)",
+              "--spotlight-color": "rgba(255, 255, 255, 0.15)",
             }
           }
         >
           {/* Enhanced glow effect on hover */}
-          <div className="absolute inset-0 transition-opacity duration-700 opacity-0 group-hover:opacity-100 rounded-xl bg-gradient-to-r from-lime-400/2.5 via-transparent to-lime-400/2.5 blur-xl group-hover:blur-2xl" />
+          <div className="absolute inset-0 transition-opacity duration-700 opacity-0 group-hover:opacity-100 rounded-xl bg-gradient-to-r from-white/5 via-transparent to-white/5 blur-xl group-hover:blur-2xl" />
           
           {/* Enhanced spotlight effect */}
           <div
@@ -180,7 +180,7 @@ const ChromaGrid = ({
             }}
           />
           <div className="relative z-10 flex-1 p-3 sm:p-4">
-            <div className="aspect-[16/10] w-full overflow-hidden rounded-lg relative group-hover:shadow-lg group-hover:shadow-lime-400/5 transition-all duration-700">
+            <div className="aspect-[16/10] w-full overflow-hidden rounded-lg relative group-hover:shadow-lg group-hover:shadow-white/10 transition-all duration-700">
               <img
                 src={c.image}
                 alt={c.title}
@@ -196,7 +196,7 @@ const ChromaGrid = ({
               
               {/* Floating category badge */}
               <div className="absolute transition-all duration-700 transform translate-y-2 opacity-0 top-3 left-3 group-hover:opacity-100 group-hover:translate-y-0">
-                <span className="px-2 py-1 text-xs font-medium text-white border rounded-full bg-lime-500/35 backdrop-blur-sm border-lime-400/10 category-badge">
+                <span className="px-2 py-1 text-xs font-medium text-black border rounded-full bg-white/90 backdrop-blur-sm border-white/30 category-badge">
                   {c.category}
                 </span>
               </div>

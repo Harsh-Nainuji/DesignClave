@@ -55,6 +55,20 @@ const SpecialOffers = () => {
       accent: '10% OFF',
       cta: 'Refer & Save',
     },
+    {
+      icon: '🎨',
+      title: 'Limited-Time Special Offer - Free Marketing Poster Design!',
+      description:
+        'For every new client project booked this month, get a professionally designed marketing poster or advertising banner (worth ₹4,000+) absolutely free, perfect for promoting your brand online or offline.',
+      bullets: [
+        'Professional marketing poster design',
+        'Advertising banner design',
+        'Worth ₹4,000+ absolutely free',
+        'Perfect for online or offline promotion'
+      ],
+      accent: 'FREE',
+      cta: 'Claim Free Poster',
+    },
   ];
 
   return (
