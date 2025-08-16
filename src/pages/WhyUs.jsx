@@ -60,8 +60,12 @@ const WhyUs = () => {
       description: "We work closely with you throughout the entire process, ensuring your vision is perfectly executed and your needs are met."
     },
     {
-      title: "Ongoing Support",
-      description: "Our relationship doesn't end when the project is complete. We provide ongoing support and maintenance to keep your site running smoothly."
+      title: "Design That Drives Business Results",
+      description: "We don't just create \"pretty designs\", every layout, color, and interaction is backed by strategy to increase conversions, boost engagement, and strengthen your brand presence."
+    },
+    {
+      title: "Personalized, Growth-Focused Approach",
+      description: "Every business is unique. We dive deep into your goals, audience, and challenges to craft tailor-made design solutions that not only look great but actively support your business growth."
     },
     {
       title: "Proven Track Record",
@@ -69,15 +73,11 @@ const WhyUs = () => {
     },
     {
       title: "100% Satisfaction Guarantee",
-      description: "Your success = our success. If you're not satisfied, we revise until you are — no extra charges (T&C apply)."
+      description: "Your success = our success. If you're not satisfied, we revise until you are, no extra charges (T&C apply)."
     },
     {
       title: "Lightning-Fast Communication",
-      description: "No ghosting. We respond within 3 hours or less during work hours — guaranteed."
-    },
-    {
-      title: "Post-Project Support Included",
-      description: "We don't disappear after delivery. Get 7 days of free post-launch support for small fixes, tweaks, or guidance."
+      description: "No ghosting. We respond within 3 hours or less during work hours, guaranteed."
     }
   ];
 

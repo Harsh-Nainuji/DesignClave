@@ -34,8 +34,8 @@ const serviceData = [
     description: "Your website is your first impression: I design clean, engaging, and user-focused interfaces that drive results. Each design is a powerful digital asset that's both striking and user-friendly.",
   },
   {
-    title: "Website Development",
-    description: "From landing pages to full sites, I bring your designs to life with modern, responsive code that's fast & future-proof. Because a great design is only effective when it performs flawlessly.",
+    title: "Business Growth-Driven Brand & Interface Blueprint",
+    description: "A complete visual + strategic roadmap for your business's online presence. I merge conversion psychology, brand positioning, and high-impact UI/UX design to create a custom interface blueprint that doesn't just look stunning it's engineered to increase leads, sales, and customer loyalty.",
   },
   {
     title: "Landing Page Design",

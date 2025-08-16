@@ -45,9 +45,9 @@ const SpecialOffers = () => {
     },
     {
       icon: '👥',
-      title: 'Refer & Save — 10% OFF Your Next Project',
+      title: 'Refer & Save - 10% OFF Your Next Project',
       description:
-        'Refer someone who hires us and get 10% OFF on your next project. No cap — refer more, save more.',
+        'Refer someone who hires us and get 10% OFF on your next project. No cap, refer more, save more.',
       bullets: [
         '10% OFF on your next project',
         'Applies after your referral hires us'
@@ -65,7 +65,7 @@ const SpecialOffers = () => {
       <div className="relative mb-6 sm:mb-8">
         <h2 className="mb-2 text-2xl font-bold sm:text-3xl md:text-4xl">Special Offers</h2>
         <p className="max-w-2xl text-sm text-gray-300 sm:text-base">
-          High value perks to launch with momentum. Some offers can be combined — ask us how.
+          High value perks to launch with momentum. Some offers can be combined, ask us how.
         </p>
       </div>
 
